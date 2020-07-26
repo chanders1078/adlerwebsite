@@ -63,14 +63,15 @@ body {
 .main-navbar .brand-container {
   flex-basis: 20%;
   align-self: flex-start;
+  margin-bottom: 10px;
 }
 .main-navbar .nav-container {
   flex-basis: 60%;
+  margin-top: 20px;
 }
 .main-navbar .nav-container ul {
   display: flex;
   list-style: none;
-  align-items: center;
 }
 .main-navbar .nav-container ul li {
   flex-basis: 100px;
@@ -79,6 +80,11 @@ body {
   text-decoration: none;
   font-size: 17px;
   color: black;
+}
+.main-navbar .nav-container ul li a:hover {
+  color: #ED1C24;
+  border-bottom: 2px solid #ED1C24;
+  padding-bottom: 10px;
 }
 .main-navbar .request-button-container {
   flex-basis: 20%;
