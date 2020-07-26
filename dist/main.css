@@ -17,6 +17,10 @@ body {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: #fff;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 }
 .container-fluid .container {
@@ -29,6 +33,7 @@ body {
   display: flex;
   width: 100%;
   flex-flow: row wrap;
+  padding-top: 0.5rem;
 }
 .info-nav .empty-info {
   flex-basis: 75%;
@@ -66,7 +71,7 @@ body {
   margin-bottom: 10px;
 }
 .main-navbar .nav-container {
-  flex-basis: 60%;
+  flex-basis: 80%;
   margin-top: 20px;
 }
 .main-navbar .nav-container ul {
@@ -74,7 +79,7 @@ body {
   list-style: none;
 }
 .main-navbar .nav-container ul li {
-  flex-basis: 100px;
+  flex-basis: 150px;
 }
 .main-navbar .nav-container ul li a {
   text-decoration: none;
@@ -86,17 +91,64 @@ body {
   border-bottom: 2px solid #ED1C24;
   padding-bottom: 10px;
 }
-.main-navbar .request-button-container {
-  flex-basis: 20%;
-}
-
-.request-button-container .request-button {
+.main-navbar .nav-container ul li .request-button {
   padding: 8px;
   font-size: 17px;
   border-radius: 0;
   background-color: #FDD600;
-  width: 150px;
   border: none;
+}
+
+main .banner-container {
+  height: 456px;
+  overflow: visible;
+  padding: 0;
+  position: relative;
+  top: 138px;
+}
+main .bg-img {
+  height: 456px;
+}
+main .bg-img img {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  object-fit: cover;
+}
+main .bg-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 43.8%;
+  background-image: linear-gradient(#ed1c24 5%, #9e050c 110%);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.heading-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.heading-container .heading-content {
+  width: 33%;
+  text-align: left;
+  position: absolute;
+  top: 100px;
+  z-index: 4;
+  color: white;
+}
+.heading-container .heading-content h6 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.heading-container .heading-content h3 {
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 22px;
 }
 
 /*# sourceMappingURL=main.css.map */
