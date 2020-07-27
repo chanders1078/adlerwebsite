@@ -38,8 +38,9 @@ body {
     }
     .top-header {
         display: flex;
-        justify-content: center;
+        // justify-content: center;
         align-items: center;
+        width: 30%;
         flex-basis: 30%;
     
         p {
@@ -92,6 +93,7 @@ body {
             }
             .nav-btn {
                 width: 200px;
+               
             }
             .request-button {
                 text-decoration: none;
@@ -190,16 +192,44 @@ main {
 .intro-heading-row {
     display: flex;
 }
+.intro-heading-content {
+    padding-bottom: 56px;
+}
+.intro-heading-content h1 {
+    margin-bottom: 10px;
+    font-size: 40px;
+    font-weight: 100;
+}
+.intro-heading-content p {
+    width: 522px;
+    margin: 8px 0;
+    font-size: 20px;
+    justify-content: left;
+    color: #000000;
+}
 .intro-content-row {
-    display: flex;
-    width: 100%;
+   display: flex;
+   .col-1 {
+       margin-left: 0;
+   }
 }
 .intro-content-col {
-    display: flex;
-    flex-flow: row wrap;
+    // width: calc(33% - 35px);
+    flex-basis: 350px;
+    margin: 15px 15px 0;
+    align-self: baseline;
     div {
-        width: 100px;
+        margin-bottom: 28px;        
+        display: flex;
         .intro-icon {
+            width: 60px;
+            height: 60px;
+        }
+        .icon-title {
+            margin-left: 30px;
+            padding: 10px 0 0;
+            font-size: 20px;
+            font-weight: bold;
         }
     }
     
