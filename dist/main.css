@@ -232,4 +232,22 @@ main .bg-img::before {
   font-weight: bold;
 }
 
+/* Solution Section */
+.solution-container {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 140px;
+}
+.solution-container::before {
+  content: " ";
+  background: url("../images/wavylines-gray.png") no-repeat center;
+  position: absolute;
+  left: -5%;
+  z-index: 100;
+  background-size: 100% 85%;
+  height: 100%;
+  width: 114%;
+}
+
 /*# sourceMappingURL=main.css.map */
