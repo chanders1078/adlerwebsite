@@ -34,13 +34,13 @@ body {
     flex-flow: row wrap;
     padding-top: 0.5rem;
     .empty-info {
-        flex-basis: 75%;
+        flex-basis: 70%;
     }
     .top-header {
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-basis: 20%;
+        flex-basis: 30%;
     
         p {
             color: #ED1C24;
@@ -73,12 +73,12 @@ body {
     .nav-container {
         flex-basis: 80%;
         margin-top: 20px;
-
-        ul {
+        .nav-items {
             display: flex;
             list-style: none;
-            li {
-              flex-basis: 150px; 
+            flex-flow: row wrap;
+            .nav-item {
+              flex-basis: 100px; 
               a {
                 text-decoration: none;
                 font-size: 17px;
@@ -90,9 +90,15 @@ body {
                 }
             } 
             }
-            li .request-button {
-                padding: 8px;
+            .nav-btn {
+                width: 200px;
+            }
+            .request-button {
+                text-decoration: none;
+                padding: 12px;
+                color: black;
                 font-size: 17px;
+                width: 200px;
                 border-radius: 0;
                 background-color: #FDD600;
                 border: none;
@@ -110,6 +116,18 @@ main {
         padding: 0;
         position: relative;
         top: 138px;
+        .waves {
+            width: 104%;
+            height: 215px;
+            position: relative;
+            top: -29%;
+            left: -4%;
+            z-index: 1;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
     }
     .bg-img {
         height: 456px;
@@ -128,9 +146,9 @@ main {
             width: 43.8%;
             background-image: linear-gradient(#ed1c24 5%,#9e050c 110%);
             opacity: 0.7;
-            // background-image: linear-gradient(128deg, #ed1c24 0%,  200%);
             z-index: 1;
         }
+        
     } 
 }
 // Heading section
@@ -157,3 +175,34 @@ main {
         }
     }
 }
+
+/*---Intro Section Start -----*/
+.intro-container {
+    width: 100%;
+    margin-top: 250px;
+ }
+ .intro-main-container {
+    padding: 0 8px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.intro-heading-row {
+    display: flex;
+}
+.intro-content-row {
+    display: flex;
+    width: 100%;
+}
+.intro-content-col {
+    display: flex;
+    flex-flow: row wrap;
+    div {
+        width: 100px;
+        .intro-icon {
+        }
+    }
+    
+}
+
+
