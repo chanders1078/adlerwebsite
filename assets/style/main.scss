@@ -1,12 +1,14 @@
 // Variables 
 $main-width: 1140px;
-$font-size-normal: 20px;
+$font-size-normal: 1.25rem;
+$phone-width: 48rem;
 
 /*Sticky Position */
 .sticky {
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 10;
+    border-top: 0;
 }
 
 /*Html MainDocument */
@@ -18,9 +20,13 @@ html {
     margin: 0;
     padding: 0;
 }
+
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
+
 body {
     background-color: #fff;
 }
+   
 /* Covid Alert Section */
 .covid-alert-container {
     width: 100%;
@@ -230,17 +236,27 @@ main {
     width: $main-width;
     margin-left: auto;
     margin-right: auto;
+    
 }
 .intro-heading-row {
     display: flex;
 }
 .intro-heading-content {
     padding-bottom: 56px;
+    @media(max-width: $phone-width) {
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
 }
 .intro-heading-content h1 {
     margin-bottom: 10px;
     font-size: 40px;
     font-weight: 100;
+    @media (max-width: $phone-width) {
+        text-align: center;
+    }
 }
 .intro-heading-content p {
     width: 522px;
@@ -248,17 +264,32 @@ main {
     font-size: $font-size-normal;
     justify-content: left;
     color: #000000;
+    @media (max-width: $phone-width) {
+            width: 650px;
+            padding: 5px;
+            text-align: center;
+    }
 }
 .intro-content-row {
    display: flex;
    .col-1 {
        margin-left: 0;
+       @media(max-width: $phone-width) {
+           margin-left: auto;
+           margin-right: auto;
+        //    margin-right: auto;
+       }
    }
+   @media only screen and (max-width: $phone-width) {
+    display: flex;
+    flex-flow: column wrap;
+ }
 }
 .intro-content-col {
     flex-basis:33%;
     margin: 15px 15px 0;
     align-self: baseline;
+    
     div {
         margin-bottom: 28px;        
         display: flex;
@@ -273,7 +304,13 @@ main {
             font-weight: bold;
         }
     }
-    
+    @media only screen and (max-width:$phone-width) {
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
 }
 /* Solution Section */
 .gray-waves {
@@ -307,6 +344,7 @@ main {
 }
 .solution-row {
     display: flex;
+    position: relative;
     &::before {
         content: " ";
         width: 502px;
@@ -314,7 +352,7 @@ main {
         border: 10px solid #FDD600;
         border-radius: 30px;
         position: absolute;
-        left:340px;
+        left: -30px;
     }
     .solution-content-col1 {
         img {
@@ -361,22 +399,36 @@ main {
 .why-choose-intro {
     margin: 0 auto;
     width: 848px;
+    @media(max-width:$phone-width) {
+        width: 650px;
+        text-align: center;
+    }
     h2 {
-        font-size: 40px;
+        font-size: 2.5rem;
         text-align: center;
         margin-bottom: 14px;
         font-weight: normal;
+        @media (max-width: $phone-width) {
+            font-size: 4rem;
+        }
     }
     p {
         margin: 8px 0;
         font-size: $font-size-normal;
         color: #000000;
         text-align: center;
+        @media (max-width: $phone-width) {
+            font-size: 2.5rem;
+        }
     }
     p {
         margin: 31px 0px 8px;
         font-size: $font-size-normal;
         text-align: center;
+        @media (max-width: $phone-width) {
+            font-size: 2.5rem;
+            padding-top: .5rem;
+        }
     }
 }
 .why-choose-row {
@@ -386,6 +438,10 @@ main {
     margin: 0 auto;
     margin: 41px -3px 0px -1px;
     justify-content: center;
+    @media(max-width: $phone-width) {
+        display: flex;
+        flex-flow: column wrap;
+    }
 }
 .why-choose-col {
     width: 25%;
@@ -397,15 +453,32 @@ main {
         text-align: center;
         font-weight: normal;
         color: #000000;
+        @media (max-width: $phone-width) {
+            font-size: 3rem;
+        }
+    }
+    @media(max-width: $phone-width) {
+        width: 650px;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2.5rem;
+        
     }
 }
 .col-4 {
     margin:15px 0 0px 23px ;
+    @media(max-width: $phone-width) {
+        margin-left: auto;
+        margin-right: auto;
+    } 
 }
 .why-choose-icon-container {
-    margin: 0 auto 23px ;
+    margin: 0 auto 23px ;   
     img {
         height: 64px;
+        @media (max-width: $phone-width) {
+            height: 8rem;
+        }
     }
 }
 
@@ -413,6 +486,7 @@ main {
 .resources-container {
     width: $main-width;
     margin: 0 auto;
+    padding: 0px 0px 110px 0;
 
 }
 .resources-main-container {
@@ -432,5 +506,152 @@ main {
     p {
         font-size: $font-size-normal;
         margin: 8px 0;
+    }
+}
+/* Resources SlideShow */
+.slider-pre-btn {
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: 300px;
+    left: -20px;
+    border: 2px solid gray;
+    border-width: 0 0 5px 5px;
+    transform: rotate(50deg);
+    background:transparent;
+    outline: none;
+    cursor: pointer;
+}
+.slideshow-container {
+    width: 1080px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    overflow: hidden;
+    .slide-container {
+        width: 330px;
+        margin: 16px 15px 30px;
+        box-shadow: 0 3px 18px 0 rgba(0, 0, 0, 0.16);
+    }
+    .card {
+        a {
+            text-decoration: none;
+            color: #000000;
+            .card-img {
+                height: 222px;
+                width: 100%;
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+                span {
+                    position: relative;
+                    top: -200px;
+                    left: 25px;
+                    background-color: #FDD600;
+                    padding: 4px 11px;
+                    font-weight: bold;
+                    border-radius: 2px;
+                }
+            }
+            .card-body {
+                margin: 28px 31px 29px 28px;
+                h6 {
+                    margin-bottom: 10px;
+                    height: 81px;
+                    font-size: 1.2rem;
+                    line-height: 1.5;
+                    font-weight: normal;
+                }
+                p {
+                    font-size: 0.875rem;
+                    line-height: 1.71;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    &::before {
+
+    }
+}
+
+.slider-next-btn {
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: -318px;
+    left: 1130px;
+    border: 2px solid gray;
+    border-width: 0 0 5px 5px;
+    transform: rotate(225deg);
+    background:transparent;
+    outline: none;
+    cursor: pointer   
+}
+
+/*Icons Grid Section */
+.icons-grid-section {
+    background-color: #f3f3f3;
+    padding-bottom: 90px ;
+    padding-top: 79px;
+    width: 100%;
+    .icons-main-container {
+        width: $main-width;
+        padding: 0 20px;
+        margin-left: auto;
+        margin-right: auto;
+        h6 {
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        .icons-main-column {
+            margin-top: 45px;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            a {
+                text-decoration: none;
+                flex-basis: calc(100%/5);
+                justify-content: center;
+                }
+                div {
+                    text-align: center;
+                    p {
+                        color: #777770;
+                        font-size: 1.25rem;
+                        font-weight: normal;
+                        text-align: center;
+                    }
+            }
+           
+        }
+    }
+}
+.image-box {
+    height: 120px;
+    width: 120px;
+    margin: 3px auto 15px ;
+    position: relative;
+    padding: 17px;
+    img {
+        width: 73px;
+        height: 64px;
+        position: relative;
+        z-index: 1;
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        width: 120px;
+        height: 120px;
+        border: 2px solid transparent;
+        border-radius: 50%;
+        background-color: #fff;
+        right: 10px;
+        top: 2px;
+        bottom: 4px;
+        
     }
 }

@@ -7,8 +7,7 @@ $(document).ready(function() {
     var stickyNavTop = $('.container-fluid').offset().top;
     var stickyNav = function(){
     var scrollTop = $(window).scrollTop();
-
-        if (scrollTop > stickyNavTop) { 
+        if (scrollTop < stickyNavTop) { 
           $('.container-fluid').addClass('sticky');
         } else {
           $('.container-fluid').removeClass('sticky'); 
