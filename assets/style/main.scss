@@ -2,6 +2,8 @@
 $main-width: 1140px;
 $font-size-normal: 1.25rem;
 $phone-width: 48rem;
+$left-right-padding: 0 15px;
+$left-right-margin: 0 auto;
 section {
     width: 100%;
 }
@@ -29,14 +31,13 @@ html {
 
 body {
     background-color: #fff;
-    
 }
    
 /* Covid Alert Section */
 .covid-alert-container {
     width: 100%;
     background-color: #FAF487;
-    padding: 0 15px;
+    padding: $left-right-padding;
     height: 90px;
     position: relative;
     .covid-alert-content {
@@ -66,16 +67,13 @@ body {
 /* Header-Section */
 .container-fluid {
     width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: $left-right-padding;
+    margin: $left-right-margin;
     background-color: #fff;
     box-shadow: 0px 0px 4px rgb(0,0,0,0.25);
     .container {
         width: $main-width;
-        margin-left: auto;
-        margin-right: auto;
+       margin: $left-right-margin;
     }
 }
 .info-nav {
@@ -99,6 +97,11 @@ body {
             font-size: $font-size-normal;
             font-weight: bold;
             padding-right: 0.5rem;
+        }
+        a {
+            &:hover {
+                background-color: #e6dede;
+            }
         }
         img {
            height: 25px;
@@ -161,8 +164,6 @@ body {
         }
     }
 }
-
-
 /* Main Navbar Section End */
 main {
     .banner-container {
@@ -208,8 +209,7 @@ main {
 /* Heading section */
 .heading-container {
     width: $main-width;
-    margin-left: auto;
-    margin-right: auto;
+    margin: $left-right-margin;
     .heading-content {
         width: 33%;
         text-align: left;
@@ -239,8 +239,7 @@ main {
  .intro-main-container {
     padding: 0 8px;
     width: $main-width;
-    margin-left: auto;
-    margin-right: auto;
+    margin: $left-right-margin;
     
 }
 .intro-heading-row {
@@ -250,8 +249,7 @@ main {
     padding-bottom: 56px;
     @media(max-width: $phone-width) {
         width: 650px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: $left-right-margin;
         text-align: center;
     }
 }
@@ -280,9 +278,7 @@ main {
    .col-1 {
        margin-left: 0;
        @media(max-width: $phone-width) {
-           margin-left: auto;
-           margin-right: auto;
-        //    margin-right: auto;
+            margin: $left-right-margin;
        }
    }
    @media only screen and (max-width: $phone-width) {
@@ -311,11 +307,8 @@ main {
     }
     @media only screen and (max-width:$phone-width) {
         width: 650px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: $left-right-margin;
     }
-
-
 }
 /* Solution Section */
 .gray-waves {
@@ -332,8 +325,7 @@ main {
 }
 .solution-container {
     width: $main-width;
-    margin-left: auto;
-    margin-right: auto;
+    margin: $left-right-margin;
     padding-top: 120px;
     padding-bottom:140px;
 }
@@ -464,17 +456,14 @@ main {
     }
     @media(max-width: $phone-width) {
         width: 650px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: $left-right-margin;
         font-size: 2.5rem;
-        
     }
 }
 .col-4 {
     margin:15px 0 0px 23px ;
     @media(max-width: $phone-width) {
-        margin-left: auto;
-        margin-right: auto;
+        margin: $left-right-margin;
     } 
 }
 .why-choose-icon-container {
@@ -492,7 +481,6 @@ main {
     width: $main-width;
     margin: 0 auto;
     padding: 0px 0px 110px 0;
-
 }
 .resources-main-container {
     width: 100%;
@@ -529,8 +517,7 @@ main {
 }
 .slideshow-container {
     width: 1080px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: $left-right-margin;
     display: flex;
     overflow: hidden;
     .slide-container {
@@ -581,7 +568,6 @@ main {
 
     }
 }
-
 .slider-next-btn {
     height: 16px;
     width: 16px;
@@ -595,7 +581,6 @@ main {
     outline: none;
     cursor: pointer   
 }
-
 /*Icons Grid Section */
 .icons-grid-section {
     background-color: #f3f3f3;
@@ -605,8 +590,7 @@ main {
     .icons-main-container {
         width: $main-width;
         padding: 0 20px;
-        margin-left: auto;
-        margin-right: auto;
+        margin: $left-right-margin;
         h6 {
             text-align: center;
             font-size: 1.5rem;
@@ -668,8 +652,7 @@ main {
 }
 .testimonial-main-container {
     width: $main-width;
-    margin-left: auto;
-    margin-right: auto;
+    margin: $left-right-margin;
     padding: 0 20px;
     .testimonial-heading-container {
         text-align: center;
@@ -786,8 +769,7 @@ main {
 .footer-cta-container {
     box-sizing: border-box;
     width: $main-width;
-    margin-left: auto;
-    margin-right: auto;
+    margin: $left-right-margin;
     padding: 0 20px;
 }
 .footer-cta-row {
@@ -814,6 +796,11 @@ main {
                 padding: 8px 24px 8px 24px;
                 border: 1px solid;
                 border-radius: 2px;
+                &:hover {
+                    background-color: #fdd600;
+                    color: #000000;
+                    border: 0;
+                }
             }
         }
     }
@@ -836,7 +823,7 @@ main {
 .container-fluid-footer {
     width: 100%;
     margin-top: 45px;
-    padding: 0 15px;
+    padding: $left-right-padding;
     background-color: #333334;
     position: relative;
     &::before {
@@ -860,9 +847,8 @@ main {
     width: 100%;
     .container {
         width: $main-width;
-        padding: 0 15px;
-        margin-left: auto;
-        margin-right: auto;
+        padding:$left-right-padding;
+        margin: $left-right-margin;
         box-sizing: border-box;
     }
     .footer-container1 {
@@ -885,7 +871,7 @@ main {
     }
 }
 .col {
-    padding: 0 15px;
+    padding: $left-right-padding;
 }
 .links {
     display: flex;
@@ -895,7 +881,7 @@ main {
     }
 }
 /* Social-Links-Column End */
-/*Subscribe-Column */
+/* Subscribe-Column */
 .subscribe-column {
     .subscribe-heading {
         color: #fdd600;
@@ -954,7 +940,6 @@ main {
     
 }
 /*Other-links-column-End */
-
 /*Copyright Section */
 .copyright-section {
     padding: 8px 15px;
@@ -970,4 +955,5 @@ main {
         }
     }
 }
+/*Copyright Section-End */
 /*Footer Section End -------------*/
