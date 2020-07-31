@@ -774,6 +774,7 @@ main .bg-img::before {
 /*Footer-Cta Section Start */
 .footer-cta-section {
   position: relative;
+  padding: 56px 0;
 }
 .footer-cta-section::before {
   content: "";
@@ -789,6 +790,19 @@ main .bg-img::before {
   z-index: -1;
   width: 104%;
   height: 100%;
+}
+.footer-cta-section::after {
+  content: "";
+  position: absolute;
+  background: url("../assets/images/svg/wavy-lines-yellow.svg") no-repeat;
+  background-size: 105% 100%;
+  top: 305px;
+  bottom: 0px;
+  left: -50px;
+  right: 0;
+  width: 104%;
+  height: 215px;
+  z-index: 2;
 }
 
 .footer-cta-container {
@@ -829,12 +843,151 @@ main .bg-img::before {
 }
 .footer-cta-row .footer-cta-image-box {
   width: 50%;
+  position: relative;
+  z-index: 4;
 }
 .footer-cta-row .footer-cta-image-box .footer-cta-image img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
 }
 
 /*Footer-Cta Section End */
+/*Footer Section Start----------------*/
+.container-fluid-footer {
+  width: 100%;
+  margin-top: 45px;
+  padding: 0 15px;
+  background-color: #333334;
+  position: relative;
+}
+.container-fluid-footer::before {
+  content: "";
+  background-image: url("../assets/images/svg/curve-white-desktop.svg");
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: -1px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.main-footer-container {
+  padding-top: 5rem;
+  margin-top: 48px;
+  width: 100%;
+}
+.main-footer-container .container {
+  width: 1140px;
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+.main-footer-container .footer-container1 .row {
+  display: grid;
+  grid-template-columns: 190px 285px 95px 600px;
+}
+
+/* Social-Links-Column */
+.social-links-container img {
+  margin-bottom: 25px;
+  padding-right: 10px;
+}
+.social-links-container p {
+  margin-bottom: 16px;
+  color: #fff;
+  font-size: 17px;
+}
+
+.col {
+  padding: 0 15px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+}
+.links a {
+  text-decoration: none;
+}
+
+/* Social-Links-Column End */
+/*Subscribe-Column */
+.subscribe-column .subscribe-heading {
+  color: #fdd600;
+  font-size: 27px;
+  margin-bottom: 1rem;
+}
+.subscribe-column .subscribe-text {
+  color: #fff;
+  font-size: 17px;
+  margin-bottom: 1rem;
+}
+.subscribe-column form .email-section {
+  width: calc(100% - 12px);
+  padding: 4px;
+  color: #000000;
+}
+.subscribe-column form .email-section::placeholder {
+  color: #000000;
+}
+.subscribe-column form .submit-btn {
+  float: right;
+  margin-top: 10px;
+  padding: 10px 30px;
+  font-size: 1rem;
+  border: 0;
+  background-color: #ed1c24;
+  color: #fff;
+  border-radius: 0;
+}
+
+/*Subscribe-Column End */
+/*Other-links-column  */
+.other-links-main-row {
+  display: flex;
+}
+.other-links-main-row .other-links {
+  width: calc(100% / 3);
+}
+.other-links-main-row .other-links div {
+  margin-bottom: 16px;
+}
+.other-links-main-row .other-links a {
+  display: block;
+  text-decoration: none;
+  color: #b2b2b2b2;
+  line-height: 1.5;
+}
+.other-links-main-row .other-links a h2 {
+  color: #fdd600;
+  font-weight: normal;
+  font-size: 19px;
+  margin: 0 0 8px;
+}
+
+/*Other-links-column-End */
+/*Copyright Section */
+.copyright-section {
+  padding: 8px 15px;
+  color: #b2b2b2;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.copyright-section a {
+  text-decoration: none;
+  color: #b2b2b2b2;
+}
+.copyright-section a:hover {
+  color: #fff;
+}
+
+/*Footer Section End -------------*/
 
 /*# sourceMappingURL=main.css.map */
