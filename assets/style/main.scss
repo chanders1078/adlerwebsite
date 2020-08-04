@@ -4,31 +4,27 @@ $font-size-normal: 1.25rem;
 $phone-width: 48rem;
 $left-right-padding: 0 15px;
 $left-right-margin: 0 auto;
+$small-width: 48rem;
 section {
     width: 100%;
 }
 
 /*Sticky Position */
-.sticky {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    border-top: 0;
-}
+// .sticky {
+//     position: fixed;
+//     top: 0;
+//     z-index: 10;
+//     border-top: 0;
+// }
 
 /*Html MainDocument */
 html {
     box-sizing: border-box;
 }
-
 * {
     margin: 0;
     padding: 0;
-    
 }
-
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          
-
 body {
     background-color: #fff;
 }
@@ -38,18 +34,18 @@ body {
     width: 100%;
     background-color: #FAF487;
     padding: $left-right-padding;
-    height: 90px;
+    height: 5.625rem;
     position: relative;
     .covid-alert-content {
         width: $main-width;
         margin: 0 auto;
         text-align: center;
-        padding: 20px 0;
+        padding: 1.25rem 0;
 
         a {
             text-decoration: none;
             color: black;
-            font-size: 18px;
+            font-size: 1.125rem;
         }
     }
     .close-btn {
@@ -63,7 +59,6 @@ body {
     }
 }
 
-
 /* Header-Section */
 .container-fluid {
     width: 100%;
@@ -73,7 +68,7 @@ body {
     box-shadow: 0px 0px 4px rgb(0,0,0,0.25);
     .container {
         width: $main-width;
-       margin: $left-right-margin;
+        margin: $left-right-margin;
     }
 }
 .info-nav {
@@ -111,7 +106,6 @@ body {
         }
     }
 }
-
 /* Main-Navbar */
 .main-navbar {
     display: flex;
@@ -126,8 +120,9 @@ body {
         margin-bottom: 10px;;
     }
     .nav-container {
-        width: calc(100% - 124px);
+        width: calc(100% - 154px);
         margin-top: $font-size-normal;
+
         .nav-items {
             display: flex;
             list-style: none;
@@ -152,19 +147,77 @@ body {
                 width: 400px;
                 margin-left: 50px;
             }
-                .request-button {
-                    text-decoration: none;
-                    padding: 12px;
-                    color: black;
-                    font-size: 17px;
-                    border-radius: 0;
-                    background-color: #FDD600;
-                    border: none;
-                }
+            .request-button {
+                text-decoration: none;
+                padding: 12px;
+                color: black;
+                font-size: 17px;
+                border-radius: 0;
+                background-color: #FDD600;
+                border: none;
+            }
+            .collapse-btn {
+                outline: none;
+                border: 0;
+                background: #fff;
+                visibility: hidden;
+            }
         }
     }
 }
 /* Main Navbar Section End */
+/*Mobile-Navbar */
+.closebtn {
+    margin-top: 40px;
+    position: relative;
+    right: -95%;
+    a {
+        text-decoration: none;
+        color: #c2bfbf;
+        font-size: 1.5rem;
+    }
+}
+.mobile-nav {
+    display: none;
+    position: fixed;
+    z-index: 101;
+    top: 150px;
+    left: 0;
+    background: #001A41;
+    width: 30%;
+    height: 100%;
+  }
+  .mobile-nav__items {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    padding: 0 30px;
+    box-sizing: border-box;
+  }
+  .mobile-nav__item {
+    margin: 1rem 0;
+  }
+  
+  .mobile-nav__item {
+      text-align: left;
+      padding: 10px 0;
+      border-bottom: 2px solid #fff;
+      &:hover {
+          border-bottom: 2px solid #ed1c24;
+      }
+    a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.5rem;
+        &:hover {
+            color: #ED1c24;
+        }
+      }
+
+  }
+
+/*Mobile-Navbar */
+
 main {
     .banner-container {
         height: 456px;
@@ -206,6 +259,7 @@ main {
         
     } 
 }
+
 /* Heading section */
 .heading-container {
     width: $main-width;
@@ -240,26 +294,17 @@ main {
     padding: 0 8px;
     width: $main-width;
     margin: $left-right-margin;
-    
 }
 .intro-heading-row {
     display: flex;
 }
 .intro-heading-content {
     padding-bottom: 56px;
-    @media(max-width: $phone-width) {
-        width: 650px;
-        margin: $left-right-margin;
-        text-align: center;
-    }
 }
 .intro-heading-content h1 {
     margin-bottom: 10px;
     font-size: 40px;
     font-weight: 100;
-    @media (max-width: $phone-width) {
-        text-align: center;
-    }
 }
 .intro-heading-content p {
     width: 522px;
@@ -267,24 +312,12 @@ main {
     font-size: $font-size-normal;
     justify-content: left;
     color: #000000;
-    @media (max-width: $phone-width) {
-            width: 650px;
-            padding: 5px;
-            text-align: center;
-    }
 }
 .intro-content-row {
    display: flex;
    .col-1 {
        margin-left: 0;
-       @media(max-width: $phone-width) {
-            margin: $left-right-margin;
-       }
    }
-   @media only screen and (max-width: $phone-width) {
-    display: flex;
-    flex-flow: column wrap;
- }
 }
 .intro-content-col {
     flex-basis:33%;
@@ -305,9 +338,8 @@ main {
             font-weight: bold;
         }
     }
-    @media only screen and (max-width:$phone-width) {
-        width: 650px;
-        margin: $left-right-margin;
+    p {
+        
     }
 }
 /* Solution Section */
@@ -365,7 +397,6 @@ main {
         margin-left: 30px;
         .solution-inner-row {
             display: flex;
-            
         }
     }
 }
@@ -937,7 +968,6 @@ main {
             }
         }   
     }
-    
 }
 /*Other-links-column-End */
 /*Copyright Section */
