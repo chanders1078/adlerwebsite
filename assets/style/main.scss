@@ -4,7 +4,34 @@ $font-size-normal: 1.25rem;
 $phone-width: 48rem;
 $left-right-padding: 0 15px;
 $left-right-margin: 0 auto;
-$small-width: 48rem;
+$primary-color: #ED1C24;
+$secondry-color: #fdd600;
+//Mobile-screen width
+$mobile-min-width: 360px;
+$mobile-max-width: 768px;
+//Tablete-screen width
+$tab-min-width: 768px;
+$tab-max-width: 1024px;
+// Variables
+
+@mixin mobile-screen ($width, $fontsize , $margin) {
+    width: $width;
+    font-size: $fontsize;
+    margin: $margin;
+}
+
+@mixin tablet-screen ($width, $fontsize, $margin) {
+    width: $width;
+    font-size: $fontsize;
+    margin: $margin;
+}
+
+@mixin fablet-screen ($width, $font-size) {
+    width: $width;
+    font-size: $fontsize;
+}
+
+
 section {
     width: 100%;
 }
@@ -47,6 +74,12 @@ body {
             color: black;
             font-size: 1.125rem;
         }
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            @include mobile-screen(320px, 24px, 0 auto);
+        }
+        @media screen and (min-width:$tab-min-width) and (max-width: $tab-max-width) {
+            @include tablet-screen(748px, 30px, 0 auto);
+        }
     }
     .close-btn {
         float: right;
@@ -55,8 +88,14 @@ body {
         margin: 15px 50px 0 0;
         width: 20px;
         height: 20px;
+        outline: none;
+        cursor: pointer;
         border-radius: 50%;
     }
+    @media screen and (max-width: $tab-max-width) {
+        height: 100%;
+        padding: 0;
+    } 
 }
 
 /* Header-Section */
@@ -69,6 +108,16 @@ body {
     .container {
         width: $main-width;
         margin: $left-right-margin;
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            @include mobile-screen(320px , 24px, 0 auto );
+        }
+
+        @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+            @include tablet-screen(748px, 30px, 0 auto );
+        }
+    }
+    @media screen and (max-width: $tab-max-width) {
+        padding: 0;
     }
 }
 .info-nav {
@@ -78,6 +127,9 @@ body {
     padding-top: 0.5rem;
     .empty-info {
         flex-basis: 70%;
+        @media screen and (min-width:$mobile-min-width) and (max-width: $tab-max-width) {
+            display: none;
+        }
     }
     .top-header {
         display: flex;
@@ -87,7 +139,7 @@ body {
         flex-basis: 30%;
     
         p {
-            color: #ED1C24;
+            color: $primary-color;
             border-right: 1px solid black;
             font-size: $font-size-normal;
             font-weight: bold;
@@ -103,6 +155,10 @@ body {
            width: 25px;
            padding-left: .5rem;
            padding-top: 0.5rem;
+        }
+        @media screen and (min-width: $mobile-min-width) and (max-width: $tab-max-width) {
+            width: 50%;
+            margin: 0 auto;
         }
     }
 }
@@ -122,7 +178,6 @@ body {
     .nav-container {
         width: calc(100% - 154px);
         margin-top: $font-size-normal;
-
         .nav-items {
             display: flex;
             list-style: none;
@@ -130,18 +185,21 @@ body {
             float: right;
             .nav-item {
                 width: 200px;
-
-              text-align: right;
+                text-align: right;
               a {
                 text-decoration: none;
                 font-size: 17px;
                 color: black;
                 &:hover {
-                    color:#ED1C24 ;
-                    border-bottom: 2px solid #ED1C24;
+                    color:$primary-color ;
+                    border-bottom: 2px solid $primary-color;
                     padding-bottom: 10px;
                 }
             } 
+            @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+                @include mobile-screen(320px, 30px , 0 auto );
+                display: none;
+            }
             }
             .nav-btn {
                 width: 400px;
@@ -153,8 +211,12 @@ body {
                 color: black;
                 font-size: 17px;
                 border-radius: 0;
-                background-color: #FDD600;
+                background-color: $secondry-color;
                 border: none;
+                @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+                    @include mobile-screen(320px, 30px , 0 auto );
+                    display: none;
+                }
             }
             .collapse-btn {
                 outline: none;
@@ -203,14 +265,14 @@ body {
       padding: 10px 0;
       border-bottom: 2px solid #fff;
       &:hover {
-          border-bottom: 2px solid #ed1c24;
+          border-bottom: 2px solid $primary-color;
       }
     a {
         text-decoration: none;
         color: #fff;
         font-size: 1.5rem;
         &:hover {
-            color: #ED1c24;
+            color: $primary-color;
         }
       }
 
@@ -252,7 +314,7 @@ main {
             left: 0;
             height: 100%;
             width: 43.8%;
-            background-image: linear-gradient(#ed1c24 5%,#9e050c 95%);
+            background-image: linear-gradient($primary-color 5%,#9e050c 95%);
             opacity: 0.7;
             z-index: 1;
         }
@@ -369,6 +431,7 @@ main {
         font-size: 40px;
         font-weight: 300;
         line-height: 1.3;
+        margin-bottom: 50px;
     }
 }
 .solution-row {
@@ -378,7 +441,7 @@ main {
         content: " ";
         width: 502px;
         height: 315px;
-        border: 10px solid #FDD600;
+        border: 10px solid $secondry-color;
         border-radius: 30px;
         position: absolute;
         left: -30px;
@@ -427,36 +490,22 @@ main {
 .why-choose-intro {
     margin: 0 auto;
     width: 848px;
-    @media(max-width:$phone-width) {
-        width: 650px;
-        text-align: center;
-    }
     h2 {
         font-size: 2.5rem;
         text-align: center;
         margin-bottom: 14px;
         font-weight: normal;
-        @media (max-width: $phone-width) {
-            font-size: 4rem;
-        }
     }
     p {
         margin: 8px 0;
         font-size: $font-size-normal;
         color: #000000;
         text-align: center;
-        @media (max-width: $phone-width) {
-            font-size: 2.5rem;
-        }
     }
     p {
         margin: 31px 0px 8px;
         font-size: $font-size-normal;
         text-align: center;
-        @media (max-width: $phone-width) {
-            font-size: 2.5rem;
-            padding-top: .5rem;
-        }
     }
 }
 .why-choose-row {
@@ -466,10 +515,6 @@ main {
     margin: 0 auto;
     margin: 41px -3px 0px -1px;
     justify-content: center;
-    @media(max-width: $phone-width) {
-        display: flex;
-        flex-flow: column wrap;
-    }
 }
 .why-choose-col {
     width: 25%;
@@ -481,29 +526,15 @@ main {
         text-align: center;
         font-weight: normal;
         color: #000000;
-        @media (max-width: $phone-width) {
-            font-size: 3rem;
-        }
-    }
-    @media(max-width: $phone-width) {
-        width: 650px;
-        margin: $left-right-margin;
-        font-size: 2.5rem;
     }
 }
 .col-4 {
     margin:15px 0 0px 23px ;
-    @media(max-width: $phone-width) {
-        margin: $left-right-margin;
-    } 
 }
 .why-choose-icon-container {
     margin: 0 auto 23px ;   
     img {
         height: 64px;
-        @media (max-width: $phone-width) {
-            height: 8rem;
-        }
     }
 }
 
@@ -572,7 +603,7 @@ main {
                     position: relative;
                     top: -200px;
                     left: 25px;
-                    background-color: #FDD600;
+                    background-color: $secondry-color;
                     padding: 4px 11px;
                     font-weight: bold;
                     border-radius: 2px;
@@ -776,7 +807,7 @@ main {
         right: 0;
         background-image: url("../assets/images/cta-grid.png");
         background-size: 100% 100%; 
-        background-color: #ed1c24;
+        background-color: $primary-color;
         background-repeat: no-repeat;
         z-index: -1;
         width: 104%;
@@ -820,7 +851,7 @@ main {
             position: relative;
             a {
                 text-decoration: none;
-                color: #fdd600;
+                color: $secondry-color;
                 margin-right: 15px;
                 display: inline-block;
                 line-height: 1.13;
@@ -828,7 +859,7 @@ main {
                 border: 1px solid;
                 border-radius: 2px;
                 &:hover {
-                    background-color: #fdd600;
+                    background-color: $secondry-color;
                     color: #000000;
                     border: 0;
                 }
@@ -915,7 +946,7 @@ main {
 /* Subscribe-Column */
 .subscribe-column {
     .subscribe-heading {
-        color: #fdd600;
+        color: $secondry-color;
         font-size: 27px;
         margin-bottom: 1rem;
     }
@@ -939,7 +970,7 @@ main {
             padding: 10px 30px;
             font-size: 1rem;
             border: 0;
-            background-color: #ed1c24;
+            background-color: $primary-color;
             color:#fff;
             border-radius: 0;
         }
@@ -961,7 +992,7 @@ main {
             color: #b2b2b2b2;
             line-height: 1.5;
             h2 {
-                color: #fdd600;
+                color: $secondry-color;
                 font-weight: normal;
                 font-size: 19px;
                 margin: 0 0 8px;
