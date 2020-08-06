@@ -75,10 +75,10 @@ body {
             font-size: 1.125rem;
         }
         @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
-            @include mobile-screen(320px, 24px, 0 auto);
+            @include mobile-screen(95%, 24px, 0 auto);
         }
         @media screen and (min-width:$tab-min-width) and (max-width: $tab-max-width) {
-            @include tablet-screen(748px, 30px, 0 auto);
+            @include tablet-screen(95%, 30px, 0 auto);
         }
     }
     .close-btn {
@@ -109,11 +109,11 @@ body {
         width: $main-width;
         margin: $left-right-margin;
         @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
-            @include mobile-screen(320px , 24px, 0 auto );
+            @include mobile-screen(95% , 24px, 0 auto );
         }
 
         @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
-            @include tablet-screen(748px, 30px, 0 auto );
+            @include tablet-screen(95%, 30px, 0 auto );
         }
     }
     @media screen and (max-width: $tab-max-width) {
@@ -157,7 +157,7 @@ body {
            padding-top: 0.5rem;
         }
         @media screen and (min-width: $mobile-min-width) and (max-width: $tab-max-width) {
-            width: 50%;
+            width: 100%;
             margin: 0 auto;
         }
     }
@@ -200,6 +200,9 @@ body {
                 @include mobile-screen(320px, 30px , 0 auto );
                 display: none;
             }
+            @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+               display: none;
+            }
             }
             .nav-btn {
                 width: 400px;
@@ -226,6 +229,12 @@ body {
             }
         }
     }
+    .collapse-container {
+        display: none;
+        @media screen and (min-width: $mobile-min-width) and (max-width: $tab-max-width) {
+            display: block;
+        }
+    }
 }
 /* Main Navbar Section End */
 /*Mobile-Navbar */
@@ -248,36 +257,46 @@ body {
     background: #001A41;
     width: 30%;
     height: 100%;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        width: 100%;
+        height: 600px;
+        position: relative;
+        top: -50px;
+    }
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        width: 100%;
+        height: 600px;
+        position: relative;
+        top: -40px;
+    }
   }
-  .mobile-nav__items {
+.mobile-nav__items {
     width: 100%;
     height: 100%;
     list-style: none;
     padding: 0 30px;
     box-sizing: border-box;
   }
-  .mobile-nav__item {
+.mobile-nav__item {
     margin: 1rem 0;
   }
   
-  .mobile-nav__item {
-      text-align: left;
-      padding: 10px 0;
-      border-bottom: 2px solid #fff;
-      &:hover {
-          border-bottom: 2px solid $primary-color;
-      }
-    a {
-        text-decoration: none;
-        color: #fff;
-        font-size: 1.5rem;
-        &:hover {
-            color: $primary-color;
-        }
-      }
-
+.mobile-nav__item {
+    text-align: left;
+    padding: 10px 0;
+    border-bottom: 2px solid #fff;
+    &:hover {
+        border-bottom: 2px solid $primary-color;
+    }
+a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+    &:hover {
+        color: $primary-color;
+    }
   }
-
+}
 /*Mobile-Navbar */
 
 main {
@@ -317,6 +336,13 @@ main {
             background-image: linear-gradient($primary-color 5%,#9e050c 95%);
             opacity: 0.7;
             z-index: 1;
+            @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+                width: 100%;
+            }
+            @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+                width: 50%;
+                z-index: 1;
+            }
         }
         
     } 
@@ -342,8 +368,25 @@ main {
             font-size: 36px;
             font-weight: 300;
             margin-bottom: 22px;
-            width: 315px;
+            width: 325px;
+            @media screen and (min-width: $mobile-min-width) and (max-width: $tab-max-width) {
+                font-size: 20px;
+            }
         }
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            width: 100%;
+            padding-left: 20px;
+        }
+        @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+            width: 50%;
+            padding-left: 20px;
+        }
+    }
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        @include mobile-screen(320px, 20px , 0 auto );
+    }
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        @include tablet-screen(728px , 25px , 0 auto );
     }
 }
 
@@ -351,22 +394,45 @@ main {
 .intro-container {
     width: 100%;
     margin-top: 250px;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $tab-max-width) {
+        margin: 0;
+        padding-top: 30px;
+        text-align: center;
+    }
+    
  }
  .intro-main-container {
     padding: 0 8px;
     width: $main-width;
     margin: $left-right-margin;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        @include mobile-screen(95%, 25px,0 auto );
+        font-size: 16px;
+    }
+
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        @include tablet-screen(95%, 25px, 0 auto);
+    }
 }
-.intro-heading-row {
-    display: flex;
-}
+// .intro-heading-row {
+//     // display: flex;
+// }
 .intro-heading-content {
     padding-bottom: 56px;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $tab-max-width) {
+        padding-bottom: 20px;
+        position: relative;
+        z-index: 12;
+    }
 }
 .intro-heading-content h1 {
     margin-bottom: 10px;
     font-size: 40px;
     font-weight: 100;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        font-size: 24px;
+        text-align: center;
+    }
 }
 .intro-heading-content p {
     width: 522px;
@@ -374,24 +440,48 @@ main {
     font-size: $font-size-normal;
     justify-content: left;
     color: #000000;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        width: 100%;
+        text-align: center;
+    }
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        text-align: center;
+        width: 100%;
+    }
 }
 .intro-content-row {
    display: flex;
    .col-1 {
        margin-left: 0;
+       @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+
+       }
    }
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        width: 100%;
+        display: block;
+    }
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        display: block;
+    }
 }
 .intro-content-col {
     flex-basis:33%;
     margin: 15px 15px 0;
     align-self: baseline;
-    
     div {
         margin-bottom: 28px;        
         display: flex;
         .intro-icon {
             width: 60px;
             height: 60px;
+            @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+                width: 100%;
+                height: 100px;
+            }
+        }
+        .intro-icon3 {
+            width: 100%;
         }
         .icon-title {
             margin-left: 30px;
@@ -399,10 +489,28 @@ main {
             font-size: $font-size-normal;
             font-weight: bold;
         }
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            display: block;
+        }
+        @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+            margin-bottom: 0;
+        }
     }
-    p {
-        
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        padding: 20px;
+        text-align: center;
+        margin-left: 0;
     }
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        margin-left: 0;
+        display: inline-block;
+        width: 33%;
+        margin-bottom: 20px;
+        margin-right: 0;
+        text-align: center;
+        font-size: 16px;
+    }
+    
 }
 /* Solution Section */
 .gray-waves {
@@ -411,7 +519,7 @@ main {
     padding-top: 50px;
     .waves-bg {
         width: 114%;
-        height: 65%;
+        height: 75%;
         position: absolute;
         left: -5%;
         z-index: -1;
@@ -420,8 +528,14 @@ main {
 .solution-container {
     width: $main-width;
     margin: $left-right-margin;
-    padding-top: 120px;
+    padding-top: 100px;
     padding-bottom:140px;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        @include mobile-screen(95%, 25px, 0 auto);
+    }
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        @include tablet-screen(95%, 20px, 0 auto);
+    }
 }
 .solution-main-container {
     width: 100%;
@@ -432,6 +546,12 @@ main {
         font-weight: 300;
         line-height: 1.3;
         margin-bottom: 50px;
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            font-size: 26px;
+        }
+        @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+            font-size: 32px;
+        }
     }
 }
 .solution-row {
@@ -445,6 +565,12 @@ main {
         border-radius: 30px;
         position: absolute;
         left: -30px;
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            display: none;
+        }
+        @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+            display: none;
+        }
     }
     .solution-content-col1 {
         img {
@@ -454,6 +580,24 @@ main {
             position: relative;
             top: -20px;
             left: 5px;
+            @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+                width: 100%;
+            }
+            @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+                width: 80%;
+            }
+        }
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+            width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
         }
     }
     .solution-content-col2 {
@@ -461,6 +605,13 @@ main {
         .solution-inner-row {
             display: flex;
         }
+    }
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        display: block;
+        font-size: 16px;
+    }
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        display: block;
     }
 }
 
@@ -625,9 +776,6 @@ main {
                 }
             }
         }
-    }
-    &::before {
-
     }
 }
 .slider-next-btn {
