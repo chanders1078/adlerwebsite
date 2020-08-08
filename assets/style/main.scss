@@ -313,6 +313,7 @@ main {
             left: -4%;
             z-index: 1;
             img {
+                object-fit: contain;
                 width: 100%;
                 height: 100%;
             }
@@ -432,6 +433,7 @@ main {
     @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
         font-size: 24px;
         text-align: center;
+        font-weight: 600;
     }
 }
 .intro-heading-content p {
@@ -443,6 +445,7 @@ main {
     @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
         width: 100%;
         text-align: center;
+        font-size: 16px;
     }
     @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
         text-align: center;
@@ -469,33 +472,42 @@ main {
     flex-basis:33%;
     margin: 15px 15px 0;
     align-self: baseline;
-    div {
+    .intro-icon-wrap {
         margin-bottom: 28px;        
         display: flex;
+        max-width: 355px;
+        min-width: 100px;
         .intro-icon {
-            width: 60px;
+            min-width: 60px;
             height: 60px;
+            margin: $left-right-margin;
             @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
                 width: 100%;
                 height: 100px;
             }
         }
         .intro-icon3 {
-            width: 100%;
+            width: 100px;
+            height: 100px;
+
         }
-        .icon-title {
-            margin-left: 30px;
-            padding: 10px 0 0;
-            font-size: $font-size-normal;
-            font-weight: bold;
-        }
+        
         @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
             display: block;
+            margin: $left-right-margin;
         }
         @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
             margin-bottom: 0;
+            margin: $left-right-margin;
         }
     }
+    .icon-content {
+        .icon-title {
+            font-size: $font-size-normal;
+            font-weight: bold;
+        }
+    }
+
     @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
         padding: 20px;
         text-align: center;
@@ -520,6 +532,7 @@ main {
     .waves-bg {
         width: 114%;
         height: 75%;
+        object-fit: cover;
         position: absolute;
         left: -5%;
         z-index: -1;
@@ -548,6 +561,7 @@ main {
         margin-bottom: 50px;
         @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
             font-size: 26px;
+            font-weight: 700;
         }
         @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
             font-size: 32px;
@@ -582,6 +596,7 @@ main {
             left: 5px;
             @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
                 width: 100%;
+                left: 0;
             }
             @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
                 width: 80%;
@@ -634,6 +649,10 @@ main {
     width: $main-width;
     padding-bottom: 140px;
     margin: 0 auto;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $tab-max-width) {
+        @include mobile-screen(95%,24px , 0 auto );
+
+    }
 }
 .main-container {
     padding: 0 20px;
@@ -646,6 +665,10 @@ main {
         text-align: center;
         margin-bottom: 14px;
         font-weight: normal;
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            font-size: 26px;
+            font-weight: 700;
+        }
     }
     p {
         margin: 8px 0;
@@ -657,6 +680,15 @@ main {
         margin: 31px 0px 8px;
         font-size: $font-size-normal;
         text-align: center;
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            font-size: 16px;
+        }
+    }
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        width: 100%;
+    }
+    @media screen and (min-width: $tab-min-width) and (max-width: $tab-max-width) {
+        width: 100%;
     }
 }
 .why-choose-row {
@@ -666,26 +698,46 @@ main {
     margin: 0 auto;
     margin: 41px -3px 0px -1px;
     justify-content: center;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        width: 100%;
+        display: block;
+    }
 }
 .why-choose-col {
     width: 25%;
     margin: 15px 23px 0;
-    h6 {
-        font-size: $font-size-normal;
-        margin: 0 0 14px;
-        line-height: 0.9;
-        text-align: center;
-        font-weight: normal;
-        color: #000000;
+    .why-choose-content {
+        h6 {
+            font-size: $font-size-normal;
+            margin: 0 0 14px;
+            line-height: 0.9;
+            text-align: center;
+            font-weight: normal;
+            color: #000000;
+        }
+        @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+            margin-bottom:20px;
+        }
+    }
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        width: 100%;
+        margin: 0;
+        font-size: 16px;
     }
 }
 .col-4 {
     margin:15px 0 0px 23px ;
+    @media screen and (min-width: $mobile-min-width) and (max-width: $mobile-max-width) {
+        margin: 0;
+    }
 }
 .why-choose-icon-container {
-    margin: 0 auto 23px ;   
+    margin: 0 auto 23px ;  
+    width: 100px; 
     img {
         height: 64px;
+        width: 100%;
+
     }
 }
 
